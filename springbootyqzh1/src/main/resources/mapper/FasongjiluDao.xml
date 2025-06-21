@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FasongjiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FasongjiluEntity" id="fasongjiluMap">
+        <result property="shujimingcheng" column="shujimingcheng"/>
+        <result property="shujifenlei" column="shujifenlei"/>
+        <result property="zuozhezhanghao" column="zuozhezhanghao"/>
+        <result property="wenjianxinxi" column="wenjianxinxi"/>
+        <result property="zhuyishixiang" column="zhuyishixiang"/>
+        <result property="fasongriqi" column="fasongriqi"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FasongjiluVO" >
+		SELECT * FROM fasongjilu  fasongjilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FasongjiluVO" >
+		SELECT  fasongjilu.* FROM fasongjilu  fasongjilu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FasongjiluView" >
+
+		SELECT  fasongjilu.* FROM fasongjilu  fasongjilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FasongjiluView" >
+		SELECT * FROM fasongjilu  fasongjilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
